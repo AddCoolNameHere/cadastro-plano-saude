@@ -520,7 +520,193 @@
     color: var(--ink-muted);
   }
 
-  /* === FOOTER NAV === */
+  /* === LGPD === */
+  .lgpd-banner {
+    max-width: 720px;
+    margin: 24px auto -8px;
+    padding: 0 24px;
+  }
+  .lgpd-banner-inner {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    box-shadow: var(--shadow-sm);
+  }
+  .lgpd-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    font-family: var(--font-display);
+    margin-top: 1px;
+  }
+  .lgpd-banner-text {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    flex: 1;
+  }
+  .lgpd-banner-text strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .lgpd-link {
+    background: none;
+    border: none;
+    color: var(--brand);
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0;
+  }
+  .lgpd-link:hover { color: var(--brand-deep); }
+
+  /* Modal */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 18, 32, 0.6);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    padding: 20px;
+    animation: stepIn 0.25s ease;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-card {
+    background: #fff;
+    border-radius: 14px;
+    max-width: 640px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+  }
+  .modal-head {
+    padding: 22px 24px 16px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1;
+  }
+  .modal-head h3 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+  }
+  .modal-close {
+    background: var(--paper-2);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--ink-soft);
+    line-height: 1;
+  }
+  .modal-close:hover { background: var(--line); }
+  .modal-body {
+    padding: 22px 24px 28px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  .modal-body h4 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 22px 0 8px;
+  }
+  .modal-body h4:first-child { margin-top: 0; }
+  .modal-body p { margin: 0 0 12px; }
+  .modal-body ul {
+    margin: 0 0 12px;
+    padding-left: 22px;
+  }
+  .modal-body li { margin-bottom: 6px; }
+  .modal-body a {
+    color: var(--brand);
+    font-weight: 600;
+  }
+
+  /* Consent checkbox no step 4 */
+  .consent-block {
+    background: #fff;
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 24px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .consent-checkbox {
+    flex-shrink: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--line-strong);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1px 0 0 0;
+    position: relative;
+    transition: all 0.15s;
+    background: #fff;
+  }
+  .consent-checkbox:checked {
+    background: var(--brand);
+    border-color: var(--brand);
+  }
+  .consent-checkbox:checked::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .consent-text {
+    font-size: 13.5px;
+    color: var(--ink);
+    line-height: 1.55;
+    cursor: pointer;
+    user-select: none;
+  }
+  .consent-text strong {
+    font-weight: 700;
+    color: var(--ink);
+  }
   .nav-footer {
     position: fixed;
     bottom: 0;
@@ -661,6 +847,16 @@
     <p>Formulário para inclusão no plano de saúde. Preencha seus dados e dos seus dependentes (se houver).</p>
   </div>
 </header>
+
+<div class="lgpd-banner">
+  <div class="lgpd-banner-inner">
+    <div class="lgpd-icon">i</div>
+    <div class="lgpd-banner-text">
+      <strong>Aviso de Privacidade (LGPD).</strong> Os dados informados aqui são tratados pela Aceolution do Brasil Ltda. exclusivamente para inclusão no plano de saúde, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018).
+      <button type="button" class="lgpd-link" onclick="document.getElementById('lgpdModal').classList.add('active')">Ler aviso completo →</button>
+    </div>
+  </div>
+</div>
 
 <div class="progress-strip">
   <div class="progress-inner">
@@ -964,6 +1160,13 @@
       <p class="step-lead">Confira tudo com calma. Você pode voltar e editar qualquer parte.</p>
 
       <div id="reviewContainer"></div>
+
+      <div class="consent-block">
+        <input type="checkbox" id="consentCheck" class="consent-checkbox">
+        <label for="consentCheck" class="consent-text">
+          <strong>Concordo</strong> com o tratamento dos meus dados pessoais e dos meus dependentes para inclusão no plano de saúde, conforme descrito no <button type="button" class="lgpd-link" onclick="document.getElementById('lgpdModal').classList.add('active'); event.preventDefault();">Aviso de Privacidade</button>. Declaro também que <strong>tenho autorização dos meus dependentes maiores de idade</strong> (ou represento legalmente os menores) para informar seus dados.
+        </label>
+      </div>
     </section>
 
     <!-- ============ SUCCESS ============ -->
@@ -985,6 +1188,91 @@
 </nav>
 
 <div class="loading-overlay" id="loadingOverlay"><div class="spinner"></div></div>
+
+<!-- ============ MODAL LGPD ============ -->
+<div class="modal-overlay" id="lgpdModal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3>Aviso de Privacidade — LGPD</h3>
+      <button type="button" class="modal-close" onclick="document.getElementById('lgpdModal').classList.remove('active')" aria-label="Fechar">×</button>
+    </div>
+    <div class="modal-body">
+      <p>Este aviso descreve como a <strong>Aceolution do Brasil Ltda.</strong> (CNPJ vinculado à operação Street View LATAM) trata os dados pessoais coletados neste formulário, em conformidade com a Lei Geral de Proteção de Dados — LGPD (Lei 13.709/2018).</p>
+
+      <h4>1. Quem é o controlador dos dados</h4>
+      <p>A <strong>Aceolution do Brasil Ltda.</strong> é a controladora dos dados pessoais coletados, sendo responsável pelas decisões sobre seu tratamento.</p>
+
+      <h4>2. Quais dados coletamos</h4>
+      <p>Coletamos os dados necessários para a inclusão do colaborador e seus dependentes no plano de saúde corporativo, incluindo:</p>
+      <ul>
+        <li><strong>Dados de identificação:</strong> nome completo, CPF, RG, data de nascimento, sexo, estado civil, nome da mãe, PIS/PASEP, CNS;</li>
+        <li><strong>Dados de contato:</strong> endereço residencial, telefone, e-mail;</li>
+        <li><strong>Dados profissionais:</strong> matrícula funcional, cargo, data de admissão;</li>
+        <li><strong>Dados bancários (opcionais):</strong> banco, agência e conta para reembolso de despesas médicas;</li>
+        <li><strong>Dados dos dependentes:</strong> mesmas categorias acima, informados pelo titular do plano com autorização dos dependentes.</li>
+      </ul>
+      <p>Alguns desses dados são considerados <strong>dados pessoais sensíveis</strong> nos termos do art. 5º, II da LGPD (especialmente aqueles relativos à saúde).</p>
+
+      <h4>3. Para que usamos seus dados</h4>
+      <p>Os dados são tratados exclusivamente para as seguintes finalidades:</p>
+      <ul>
+        <li>Inclusão e gestão do colaborador e dependentes no plano de saúde da operadora contratada;</li>
+        <li>Cumprimento de obrigações contratuais entre a empresa e a operadora;</li>
+        <li>Cumprimento de obrigações legais e regulatórias (ANS, Receita Federal, eSocial, etc.);</li>
+        <li>Comunicação com o colaborador sobre o status do cadastro e questões administrativas relacionadas ao benefício.</li>
+      </ul>
+
+      <h4>4. Bases legais</h4>
+      <p>O tratamento se fundamenta nas seguintes bases legais previstas na LGPD:</p>
+      <ul>
+        <li><strong>Execução de contrato</strong> (art. 7º, V) — para vinculação do beneficiário à apólice;</li>
+        <li><strong>Cumprimento de obrigação legal ou regulatória</strong> (art. 7º, II e art. 11, II, "a") — para envio de informações a órgãos competentes;</li>
+        <li><strong>Consentimento</strong> (art. 7º, I e art. 11, I) — para tratamento de dados sensíveis de saúde, mediante o aceite registrado neste formulário.</li>
+      </ul>
+
+      <h4>5. Com quem compartilhamos</h4>
+      <p>Os dados podem ser compartilhados com:</p>
+      <ul>
+        <li>Operadora(s) e administradora(s) do plano de saúde contratado;</li>
+        <li>Corretoras e consultorias de benefícios envolvidas na gestão da apólice;</li>
+        <li>Órgãos públicos e reguladores quando exigido por lei;</li>
+        <li>Provedores de tecnologia que dão suporte ao processo (ex.: Google Workspace para armazenamento da planilha de cadastros).</li>
+      </ul>
+      <p>Não vendemos nem cedemos seus dados para finalidades comerciais de terceiros.</p>
+
+      <h4>6. Por quanto tempo guardamos</h4>
+      <p>Os dados são mantidos enquanto durar o vínculo do colaborador com a empresa e com o plano de saúde, e por períodos adicionais quando exigido por obrigações legais (ex.: prazos prescricionais trabalhistas, fiscais e regulatórios da ANS), após os quais são eliminados ou anonimizados.</p>
+
+      <h4>7. Seus direitos como titular</h4>
+      <p>Nos termos do art. 18 da LGPD, você pode, a qualquer momento, solicitar:</p>
+      <ul>
+        <li>Confirmação da existência de tratamento dos seus dados;</li>
+        <li>Acesso aos dados;</li>
+        <li>Correção de dados incompletos, inexatos ou desatualizados;</li>
+        <li>Anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desconformidade;</li>
+        <li>Portabilidade dos dados a outro fornecedor;</li>
+        <li>Eliminação dos dados tratados com base no consentimento;</li>
+        <li>Informação sobre entidades públicas e privadas com as quais houve compartilhamento;</li>
+        <li>Revogação do consentimento, observados os efeitos previstos na lei.</li>
+      </ul>
+
+      <h4>8. Segurança</h4>
+      <p>Adotamos medidas técnicas e administrativas razoáveis para proteger os dados contra acessos não autorizados, perda, alteração ou divulgação indevida, incluindo controle de acesso, transmissão criptografada (HTTPS) e armazenamento em ambiente seguro do Google Workspace.</p>
+
+      <h4>9. Dependentes</h4>
+      <p>Ao informar dados dos seus dependentes, você declara ter autorização expressa dos dependentes maiores de idade ou agir como representante legal dos menores. A responsabilidade por essa autorização é do titular que preenche este formulário.</p>
+
+      <h4>10. Canal de contato</h4>
+      <p>Para exercer qualquer dos direitos acima, esclarecer dúvidas ou apresentar reclamações sobre o tratamento dos seus dados, entre em contato pelo e-mail:</p>
+      <p><a href="mailto:Lucas.fuss@aceolution.com">Lucas.fuss@aceolution.com</a></p>
+
+      <h4>11. Alterações</h4>
+      <p>Este aviso pode ser atualizado periodicamente. A versão vigente está sempre disponível neste formulário.</p>
+
+      <p style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 12px; color: var(--ink-muted);">Última atualização: abril de 2026.</p>
+    </div>
+  </div>
+</div>
 
 <!-- ============ DEPENDENT TEMPLATE ============ -->
 <template id="dependentTemplate">
@@ -1300,6 +1588,19 @@
 
   btnNext.addEventListener("click", async () => {
     if (currentStep === TOTAL_STEPS) {
+      // valida consentimento LGPD antes de enviar
+      const consent = document.getElementById("consentCheck");
+      if (!consent.checked) {
+        const block = consent.closest(".consent-block");
+        block.style.background = "#fef2f2";
+        block.style.borderColor = "var(--danger)";
+        block.scrollIntoView({ behavior: "smooth", block: "center" });
+        setTimeout(() => {
+          block.style.background = "";
+          block.style.borderColor = "";
+        }, 2500);
+        return;
+      }
       await submitForm();
       return;
     }
@@ -1419,6 +1720,7 @@
     });
     data.dependentes = deps;
     data.dataEnvio = new Date().toISOString();
+    data.consentimentoLGPD = "Aceito em " + new Date().toLocaleString("pt-BR");
     return data;
   }
 
@@ -1534,6 +1836,19 @@
     document.getElementById("refCode").textContent = "Código de referência: " + ref;
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
+
+  // =============================================================
+  //  MODAL LGPD
+  // =============================================================
+  const lgpdModal = document.getElementById("lgpdModal");
+  lgpdModal.addEventListener("click", (e) => {
+    if (e.target === lgpdModal) lgpdModal.classList.remove("active");
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lgpdModal.classList.contains("active")) {
+      lgpdModal.classList.remove("active");
+    }
+  });
 
   // =============================================================
   //  INIT
